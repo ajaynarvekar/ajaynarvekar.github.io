@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog – Ajay Narvekar</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo"><a href="../index.html">Ajay&nbsp;Narvekar</a></div>
+        <input type="checkbox" class="nav-toggle" id="nav-toggle" hidden />
+        <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+        <ul>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../portfolio.html">Portfolio</a></li>
+          <li><a href="index.html">Blog</a></li>
+        </ul>
+        <button id="dark-mode-toggle" aria-label="Toggle dark mode"></button>
+      </nav>
+    </header>
+    <section class="section">
+      <h2>Blog</h2>
+      <div class="posts">
+        <article class="post">
+          <h2><a href="welcome.html">Welcome to My Data Blog</a></h2>
+          <div class="meta">July&nbsp;29,&nbsp;2025 – General</div>
+          <p>
+            Learn why I started this blog and what you can expect: a journey
+            through SQL, Azure, data modelling and best practices in modern data
+            engineering.
+          </p>
+          <a class="read-more" href="welcome.html">Read more &rarr;</a>
+        </article>
+        <article class="post">
+          <h2><a href="dimensional-modeling.html">Understanding Dimensional Modelling</a></h2>
+          <div class="meta">July&nbsp;29,&nbsp;2025 – Modelling</div>
+          <p>
+            An in‑depth look at dimensional modelling techniques including star
+            schemas and data vaults, with practical tips for building scalable
+            data warehouses.
+          </p>
+          <a class="read-more" href="dimensional-modeling.html">Read more &rarr;</a>
+        </article>
+      </div>
+    </section>
+    <footer>
+      <p>&copy; <span id="current-year"></span> Ajay Narvekar. All rights reserved.</p>
+      <p>Made with ❤️ in London</p>
+    </footer>
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

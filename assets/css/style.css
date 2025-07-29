@@ -1,0 +1,409 @@
+/*
+ * Stylesheet for Ajay Narvekar's personal portfolio site
+ *
+ * This file defines a clean, modern aesthetic with a focus on legibility
+ * and responsive design. CSS variables are used to centralise the theme
+ * definitions, making it straightforward to switch between light and dark
+ * modes. Cards and layouts are responsive, scaling gracefully on
+ * different screen sizes. Feel free to tweak the variables to suit your
+ * preferences.
+ */
+
+/* Theme variables */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #212529;
+  --primary-color: #0a192f;
+  --secondary-color: #112240;
+  --accent-color: #64ffda;
+  --card-bg: #ffffff;
+  --card-text: #212529;
+  --link-color: #007acc;
+  --link-hover-color: #005999;
+  --footer-bg: #0a192f;
+  --footer-text: #d1dce5;
+}
+
+/* Dark mode overrides */
+body.dark-mode {
+  --bg-color: #0a192f;
+  --text-color: #ccd6f6;
+  --card-bg: #112240;
+  --card-text: #ccd6f6;
+  --link-color: #64ffda;
+  --link-hover-color: #48cbb1;
+  --footer-bg: #0a192f;
+  --footer-text: #8895b3;
+}
+
+/* Global resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover,
+a:focus {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+/* Header and Navigation */
+header {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+}
+
+nav .logo a {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav ul li a {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* Dark mode toggle button */
+#dark-mode-toggle {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+/* Mobile navigation */
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  transition: transform 0.3s ease;
+}
+
+.nav-toggle-label span {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-toggle-label span::before {
+  content: '';
+  top: -8px;
+}
+
+.nav-toggle-label span::after {
+  content: '';
+  top: 8px;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  nav ul.active {
+    display: flex;
+  }
+  .nav-toggle-label {
+    display: block;
+  }
+  #dark-mode-toggle {
+    font-size: 1.5rem;
+  }
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  background-image: url('../images/hero.png');
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
+}
+
+.hero .content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  padding: 1rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero .subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.hero .tagline {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-list {
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+  text-align: left;
+  display: inline-block;
+}
+
+.hero-list li {
+  margin-bottom: 0.4rem;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.hero-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #52e0c4;
+}
+
+/* Section styling */
+.section {
+  padding: 4rem 1rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section.light {
+  background-color: #f5f5f5;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.card {
+  background-color: var(--card-bg);
+  color: var(--card-text);
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  flex: 1 1 300px;
+  max-width: 350px;
+}
+
+.card h3 {
+  margin-bottom: 0.75rem;
+  color: var(--accent-color);
+}
+
+.card p {
+  line-height: 1.5;
+}
+
+/* About page */
+.skills {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.skills li {
+  margin-bottom: 0.5rem;
+}
+
+/* Blog */
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.post {
+  background-color: var(--card-bg);
+  color: var(--card-text);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.post h2 {
+  margin-bottom: 0.5rem;
+  color: var(--accent-color);
+}
+
+.post .meta {
+  font-size: 0.9rem;
+  color: var(--link-hover-color);
+  margin-bottom: 1rem;
+}
+
+.post .read-more {
+  margin-top: 0.5rem;
+  display: inline-block;
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.post-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.post-content h1 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  color: var(--accent-color);
+}
+
+.post-content h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  color: var(--accent-color);
+}
+
+.post-content p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.footnotes {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.footnotes ol {
+  padding-left: 1.5rem;
+}
+
+.footnotes li {
+  margin-bottom: 0.5rem;
+}
+
+/* Footer */
+footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+footer p {
+  margin-bottom: 0.5rem;
+}
+
+footer .social a {
+  color: var(--accent-color);
+  margin: 0 0.5rem;
+}
+
+footer .social a:hover {
+  text-decoration: underline;
+}

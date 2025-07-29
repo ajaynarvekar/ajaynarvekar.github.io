@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Understanding Dimensional Modelling – Ajay Narvekar</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo"><a href="../index.html">Ajay&nbsp;Narvekar</a></div>
+        <input type="checkbox" class="nav-toggle" id="nav-toggle" hidden />
+        <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+        <ul>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../portfolio.html">Portfolio</a></li>
+          <li><a href="index.html">Blog</a></li>
+        </ul>
+        <button id="dark-mode-toggle" aria-label="Toggle dark mode"></button>
+      </nav>
+    </header>
+    <main class="post-content">
+      <h1>Understanding Dimensional Modelling</h1>
+      <p>
+        Dimensional modelling is a technique used to structure data warehouses for
+        efficient querying and analysis. It separates business process data into
+        <strong>facts</strong> and <strong>dimensions</strong>【885987071359135†L153-L158】.
+      </p>
+      <h2>Star Schema</h2>
+      <p>
+        The <em>star schema</em> is one of the most common architectures in
+        dimensional modelling. It arranges data into a central fact table
+        connected to dimension tables, forming a star‑like shape【885987071359135†L138-L147】.
+        Fact tables store measurable, quantitative data, while dimension tables
+        contain descriptive attributes that provide context to facts【885987071359135†L153-L158】.
+      </p>
+      <h2>Data Vault</h2>
+      <p>
+        While star schemas are great for simplicity and query performance, data
+        vault modelling addresses scalability and auditability. A data vault is
+        designed for long‑term historical storage of data from multiple
+        operational systems【968585224980313†L155-L162】. It separates structural
+        information (<em>hubs</em> and <em>links</em>) from descriptive attributes
+        (<em>satellites</em>), making the model resilient to change【968585224980313†L174-L178】.
+      </p>
+      <h2>Choosing the Right Model</h2>
+      <p>
+        Choosing between star and data vault depends on your requirements.
+        Use a star schema when you need fast query performance and a simple
+        model for end‑users. Choose a data vault when you require flexibility,
+        scalability and traceability across many source systems.
+      </p>
+      <div class="footnotes">
+        <ol>
+          <li id="fn1">
+            Definition of a star schema: a central fact table linked to
+            dimension tables forming a star shape【885987071359135†L138-L147】.
+          </li>
+          <li id="fn2">
+            Facts hold measurable data and dimensions contain descriptive
+            attributes【885987071359135†L153-L158】.
+          </li>
+          <li id="fn3">
+            Data vault modelling stores historical data from multiple systems
+            and supports auditing and change resilience【968585224980313†L155-L162】.
+          </li>
+          <li id="fn4">
+            Separation of hubs, links and satellites makes the data vault
+            resilient to change【968585224980313†L174-L178】.
+          </li>
+        </ol>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; <span id="current-year"></span> Ajay Narvekar. All rights reserved.</p>
+      <p>Made with ❤️ in London</p>
+    </footer>
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajay Narvekar | Data Engineer &amp; Architect</title>
+    <!-- External font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Main stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <!-- Header and navigation -->
+    <header>
+      <nav>
+        <div class="logo"><a href="index.html">Ajay&nbsp;Narvekar</a></div>
+        <!-- Hidden checkbox used for mobile nav toggle -->
+        <input type="checkbox" class="nav-toggle" id="nav-toggle" hidden />
+        <label for="nav-toggle" class="nav-toggle-label"><span></span></label>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="posts/index.html">Blog</a></li>
+        </ul>
+        <button id="dark-mode-toggle" aria-label="Toggle dark mode"></button>
+      </nav>
+    </header>
+
+    <!-- Hero section -->
+    <section class="hero">
+      <div class="content">
+        <h1>Hi, I'm Ajay Narvekar</h1>
+        <p class="subtitle">Data Engineer &amp; Architect</p>
+        <p class="tagline">
+          Building scalable data platforms, crafting elegant models and
+          transforming raw data into insights.
+        </p>
+        <ul class="hero-list">
+          <li>Over 11&nbsp;years of industry experience</li>
+          <li>Expert in SQL, Azure &amp; cloud data solutions</li>
+          <li>Passionate about dimensional and data vault modelling</li>
+          <li>Blogger &amp; lifelong learner</li>
+        </ul>
+        <a href="blog/index.html" class="btn">Read My Blog</a>
+      </div>
+    </section>
+
+    <!-- What I Do section -->
+    <section class="section">
+      <h2>What I Do</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Data Architecture</h3>
+          <p>
+            I design and build robust data platforms, ensuring data flows
+            seamlessly from source systems to analytics layers.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Data Modelling</h3>
+          <p>
+            From dimensional star schemas to data vaults, I create models that
+            balance performance with flexibility.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Cloud &amp; Analytics</h3>
+          <p>
+            Specialising in Azure, SQL&nbsp;Server and Python, I develop scalable
+            solutions for business intelligence and machine learning.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured posts section -->
+    <section class="section light">
+      <h2>Featured Posts</h2>
+      <div class="posts">
+        <article class="post">
+          <h2><a href="posts/welcome.html">Welcome to My Data Blog</a></h2>
+          <div class="meta">July&nbsp;29,&nbsp;2025 – General</div>
+          <p>
+            Learn why I started this blog and what you can expect: a journey
+            through SQL, Azure, data modelling and best practices in modern data
+            engineering.
+          </p>
+          <a class="read-more" href="posts/welcome.html">Read more &rarr;</a>
+        </article>
+        <article class="post">
+          <h2>
+            <a href="posts/dimensional-modeling.html"
+              >Understanding Dimensional Modelling</a
+            >
+          </h2>
+          <div class="meta">July&nbsp;29,&nbsp;2025 – Modelling</div>
+          <p>
+            An in‑depth look at dimensional modelling techniques including star
+            schemas and data vaults, with practical tips for building scalable
+            data warehouses.
+          </p>
+          <a class="read-more" href="posts/dimensional-modeling.html"
+            >Read more &rarr;</a
+          >
+        </article>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; <span id="current-year"></span> Ajay Narvekar. All rights reserved.</p>
+      <p>Made with ❤️ in London</p>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
